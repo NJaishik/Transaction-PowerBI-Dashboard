@@ -34,26 +34,16 @@ DAX (Measures & KPIs)
 Power Query (Data Cleaning & Transformation)
 
 **Key DAX Measures:**
-Total Revenue =
-SUM ( transaction_data[Transaction Amount] )
-
-Total Transactions =
-COUNT ( transaction_data[Transaction ID] )
-
-Average Transaction Value =
-DIVIDE ( [Total Revenue], [Total Transactions] )
-
-Unique Customers =
-DISTINCTCOUNT ( transaction_data[Sender Account ID] )
-
+Total Revenue = SUM ( transaction_data[Transaction Amount] )
+Total Transactions = COUNT ( transaction_data[Transaction ID] )
+Average Transaction Value = DIVIDE ( [Total Revenue], [Total Transactions] )
+Unique Customers = DISTINCTCOUNT ( transaction_data[Sender Account ID] )
 Fraud Transactions =
 CALCULATE (
     COUNTROWS ( transaction_data ),
     transaction_data[Fraud Flag] = TRUE
 )
-
-Fraud Transaction Ratio =
-DIVIDE ( [Fraud Transactions], [Total Transactions] )
+Fraud Transaction Ratio = DIVIDE ( [Fraud Transactions], [Total Transactions] )
 
 **Data Preparation:**
 Cleaned and transformed data using Power Query
